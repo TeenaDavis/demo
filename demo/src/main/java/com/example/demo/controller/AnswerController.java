@@ -1,5 +1,7 @@
-package com.example.demo;
+package com.example.demo.controller;
 
+import com.example.demo.data.Answer;
+import com.example.demo.repository.AnswerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +14,7 @@ import java.util.List;
 @RequestMapping
 public class AnswerController{
     @Autowired
-    private  AnswerRepository answerRepository;
+    private AnswerRepository answerRepository;
 
     public AnswerController(AnswerRepository answerRepository) {
         this.answerRepository = answerRepository;

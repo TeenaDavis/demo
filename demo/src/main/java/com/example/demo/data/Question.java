@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.data;
 
 
 import jakarta.persistence.*;
@@ -14,7 +14,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "Question")
-class Question {
+public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,7 +28,7 @@ class Question {
         return type;
     }
 
-    public void setType(com.example.demo.Type type) {
+    public void setType(com.example.demo.model.Type type) {
     }
 
 

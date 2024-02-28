@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.data;
 
 
 import jakarta.persistence.*;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "Answer")
-class Answer{
+public class Answer{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

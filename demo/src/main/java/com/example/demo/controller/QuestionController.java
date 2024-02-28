@@ -1,11 +1,10 @@
-package com.example.demo;
+package com.example.demo.controller;
 
+import com.example.demo.data.Question;
+import com.example.demo.repository.QuestionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Type;
 import java.util.List;
 
 @RestController
@@ -14,7 +13,9 @@ public class QuestionController<type> {
 
     @Autowired
     private QuestionRepository questionRepository;
-    private Type type;
+    private Question.Type type;
+    private QuestionController<Object> questionService;
+
 
     public QuestionController(QuestionRepository questionRepository) {
         this.questionRepository = questionRepository;
@@ -22,7 +23,7 @@ public class QuestionController<type> {
 
     @GetMapping
     public List<Question> getAllQuestions() {
-        return questionRepository.findAll();
+        return questionService.getAllQuestions();
     }
     @GetMapping("/questions/{type}")
     public List<Question> getQuestionsByType(@PathVariable String type) {
